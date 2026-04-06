@@ -1,0 +1,15 @@
+{
+    "name": "denib/rubrica",
+    "autoload": {
+        "psr-4": {
+            "Denib\\Rubrica\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Denaz",
+            "email": "denibrea7@gmail.com"
+        }
+    ],
+    "require": {}
+}
