@@ -11,5 +11,7 @@
             "email": "denibrea7@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "twig/twig": "^3.24"
+    }
 }

@@ -2,9 +2,16 @@
 
 namespace Denib\Rubrica\pages;
 
+use Denib\Rubrica\View;
+
 class ContactForm implements ActionContract{
 
     public function respond(): string {
-        return "ContactList from class";
+
+        $view = new View();
+
+        return $view->render("list.html.twig", [
+            "contacts" => ["antonio","paolo","giuseppe"]
+        ]);
     }
 }
