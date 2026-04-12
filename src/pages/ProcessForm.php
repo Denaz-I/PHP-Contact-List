@@ -8,6 +8,6 @@ use Denib\Rubrica\RedirectResponse;
 class ProcessForm implements ActionContract{
 
     public function respond(): Response {
-        return new RedirectResponse("/list");
+        return new RedirectResponse("/");
     }
 }
