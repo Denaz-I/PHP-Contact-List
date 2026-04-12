@@ -10,7 +10,7 @@ class ContactList implements ActionContract{
     public function respond(): Response {
 
         $view = new ViewResponse("list.html.twig", [
-            "contacts" => ["antonio","paolo","giuseppe"]
+            "contacts" => ["Antonio","Paolo","Giuseppe"]
         ]);
 
         return $view;

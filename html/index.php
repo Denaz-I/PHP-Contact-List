@@ -8,7 +8,7 @@ use Denib\Rubrica\pages\ProcessForm;
 use Denib\Rubrica\Route;
 
 Route::Get("/", ContactList::class);
-Route::Get("/list", fn() => "List");
+Route::Get("/list", ContactList::class);
 Route::Get("/new", ContactForm::class);
 Route::Post("/", ProcessForm::class);
 
