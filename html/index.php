@@ -17,11 +17,10 @@ $routeConfig = Route::Resolve();
 if (is_callable($routeConfig->delegate)) {
     $delegate = $routeConfig->delegate;
     $value    = $delegate();
+    echo $value;
 } else {
     $delegate = new $routeConfig->delegate();
     $value = $delegate->respond();
+    $value->send();
 }
-
-print($value); 
-
 ?>
