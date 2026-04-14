@@ -10,12 +10,6 @@ class ProcessForm implements ActionContract{
 
     public function respond(Request $request): Response {
 
-        echo $request->name;
-        echo "MYVALUE: " . $request->myvalue;
-
-        die();
-
-
         return new RedirectResponse("/");
     }
 }
