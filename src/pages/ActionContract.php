@@ -2,8 +2,9 @@
 
 namespace Denib\Rubrica\pages;
 
+use Denib\Rubrica\Request;
 use Denib\Rubrica\Response;
 
 interface ActionContract {
-    function respond(): Response;
+    function respond(Request $request): Response;
 }

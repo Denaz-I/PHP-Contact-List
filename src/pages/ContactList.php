@@ -5,10 +5,11 @@ namespace Denib\Rubrica\pages;
 use Denib\Rubrica\Response;
 use Denib\Rubrica\ViewResponse;
 use Denib\Rubrica\entity\Contact;
+use Denib\Rubrica\Request;
 
 class ContactList implements ActionContract{
 
-    public function respond(): Response {
+    public function respond(Request $request): Response {
 
         $c1 = New Contact();
         $c1->name = "Antonio";

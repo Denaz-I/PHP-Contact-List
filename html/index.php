@@ -6,21 +6,24 @@ use Denib\Rubrica\pages\ContactForm;
 use Denib\Rubrica\pages\ContactList;
 use Denib\Rubrica\pages\ProcessForm;
 use Denib\Rubrica\Route;
+use Denib\Rubrica\Request;
 
 Route::Get("/", ContactList::class);
 Route::Get("/list", ContactList::class);
 Route::Get("/new", ContactForm::class);
 Route::Post("/", ProcessForm::class);
 
-$routeConfig = Route::Resolve();
+$request = Request::Capture();
+
+$routeConfig = Route::Resolve($request);
 
 if (is_callable($routeConfig->delegate)) {
     $delegate = $routeConfig->delegate;
-    $value    = $delegate();
+    $value    = $delegate($request);
     echo $value;
 } else {
     $delegate = new $routeConfig->delegate();
-    $value = $delegate->respond();
+    $value = $delegate->respond($request);
     $value->send();
 }
 ?>
