@@ -31,6 +31,13 @@ class ContactRepository implements RepositoryContract {
 	}
 
 	public function save( $data ): void {
+		$collection = $this->getCollection();
+
+		$data->id = rand(0, 500000);
+
+		$collection[] = $data;
+
+		$this->updateCollection( $collection );
 	}
 
 	public function delete( mixed $id ): void {
@@ -40,13 +47,21 @@ class ContactRepository implements RepositoryContract {
 	}
 
 	public function all(): array {
+		return $this->getCollection();
 	}
 
 	public function search( callable $predicate ): array {
 	}
 	private function getCollection(): mixed {
+		return json_decode( file_get_contents( $this->filePath ), true );
 	}
 	public function updateCollection( mixed $collection ): void {
+		$serialized = json_encode( $collection, JSON_PRETTY_PRINT );
+
+		$resource = fopen( $this->filePath, 'w' );
+
+		fwrite( $resource, $serialized );
+		fclose( $resource );
 	}
     
 }

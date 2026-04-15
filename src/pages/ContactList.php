@@ -2,6 +2,8 @@
 
 namespace Denib\Rubrica\pages;
 
+use Denib\Rubrica\repository\RepositoryContract;
+use Denib\Rubrica\App;
 use Denib\Rubrica\Response;
 use Denib\Rubrica\ViewResponse;
 use Denib\Rubrica\entity\Contact;
@@ -11,22 +13,14 @@ class ContactList implements ActionContract{
 
     public function respond(Request $request): Response {
 
-        $c1 = New Contact();
-        $c1->name = "Antonio";
-        $c1->surname = "Bruno";
+        $repository = App::getService(RepositoryContract::class);
 
-        $c2 = New Contact();
-        $c2->name = "Paolo";
-        $c2->surname = "Prova2";
-
-        $c3 = New Contact();
-        $c3->name = "Giuseppe";
-        $c3->surname = "Prova3";
+        $contacts = $repository->all();
 
         $view = new ViewResponse("list.html.twig", [
             "title" => "Lista Contatti",
 
-            "contatti" => [$c1, $c2, $c3]
+            "contatti" => $contacts
         ]);
 
         return $view;
