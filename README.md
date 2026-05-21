@@ -4,7 +4,7 @@ A contact management web application built with PHP 8.3, demonstrating clean arc
 
 ## Overview
 
-This project is a CRUD contact book (rubrica = address book in Italian) where users can create, view, and delete contacts with optional photo upload. A lightweight MVC-like structure built from scratch, with a custom router, service container, and interchangeable storage backends.
+This project is a CRUD contact list where users can create, view, and delete contacts with optional photo upload. A lightweight MVC-like structure built from scratch, with a custom router, service container, and interchangeable storage backends.
 
 ## Architecture
 
