@@ -9,8 +9,8 @@ Class Request {
     public function __construct() {
         $params = array_merge($_GET, $_POST);
 
-        IF (isset($_FILES)) {
-            $params = array_merge($params, ["files", $_FILES]);
+        if (isset($_FILES)) {
+            $params = array_merge($params, ["files" => $_FILES]);
         }
 
         $this->params = (object) $params;

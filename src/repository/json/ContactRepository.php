@@ -41,6 +41,17 @@ class ContactRepository implements RepositoryContract {
 	}
 
 	public function delete( mixed $id ): void {
+		$collection = $this->getCollection();
+
+		$newCollection = [];
+
+		foreach($collection as $item) {
+			if($item['id'] == $id)
+				continue;
+			$newCollection[] = $item;
+		}
+		
+		$this->updateCollection($newCollection);
 	}
 
 	public function get( mixed $id ) {

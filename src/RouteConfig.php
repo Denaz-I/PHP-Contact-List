@@ -23,7 +23,7 @@ class RouteConfig {
     private function isValid(string $delegate):bool {
         if(class_exists($delegate)) {
             $reflection = new ReflectionClass($delegate);
-            RETURN $reflection->implementsInterface(ActionContract::class);
+            return $reflection->implementsInterface(ActionContract::class);
         }
 
         return false;
