@@ -1,4 +1,4 @@
-# PHP contact_book
+# PHP contact_list
 
 A contact management web application built with PHP 8.3, demonstrating clean architecture principles and design patterns without relying on a full framework built while following my Full Stack Web Developer course
 
